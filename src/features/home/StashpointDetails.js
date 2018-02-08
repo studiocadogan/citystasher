@@ -67,7 +67,9 @@ export class StashpointDetails extends Component {
 
     };
 
-    return (
+    return (<Fragment>
+        {this.renderBigPhoto()}
+
       <Transition in={open} mountOnEnter unmountOnExit timeout={{ enter: 0, exit: 300 }}>
         {state => <div style={{...slideTransition[state]}} className="home-stashpoint-details">
           <h1>{stashpoint.name}</h1>
@@ -92,9 +94,8 @@ export class StashpointDetails extends Component {
           </div>
             {stashpoint.photos && this.renderImageGrid(stashpoint)}
                                 </div>}
-          {this.renderBigPhoto()}
-
       </Transition>
+        </Fragment>
     );
   }
 }
