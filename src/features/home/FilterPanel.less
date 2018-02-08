@@ -1,0 +1,58 @@
+@import '../../styles/mixins';
+
+.home-filter-panel {
+  padding: 20px;
+  height: 100%;
+  width: 300px;
+  bottom: 0;
+  left: 0;
+  z-index: 3000;
+  background: #f5f5f5;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+  .stashpoint-box{
+    overflow: scroll;
+    &::-webkit-scrollbar{
+      display: none;
+    }
+    width: 100%;
+    height: 70%;
+  .stashpoint-data{
+    border-radius: 4px;
+    border: 1px solid #dedede;
+    padding: 10px 4px;
+    margin: 4px 0;
+    cursor: pointer;
+
+    &:hover{
+      background: #d3d3d3;
+    }
+    h3{
+      font-size: 14px;
+
+    }
+  }
+  }
+
+  .box{
+    padding: 10px;
+
+    background: #dedede;
+    position: absolute;
+    bottom: 0;
+    left:0;
+    height: 30%;
+    width: 100%;
+  }
+  button{
+    border: none;
+    border-radius: 4px;
+    background: #2db7f5;
+    padding: 10px;
+    color: white;
+    margin: 4px 0;
+  }
+
+}

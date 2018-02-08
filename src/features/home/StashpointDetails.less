@@ -1,0 +1,80 @@
+@import '../../styles/mixins';
+
+.home-stashpoint-details {
+  position: fixed;
+  height: ~'calc(100% - 40px)';
+  top: 20px;
+  width: 500px;
+  padding: 20px;
+  border-radius: 4px 0 0 4px;
+  z-index: 3000;
+  background: #f5f5f5;
+  right: 0;
+  transition: transform .3s ease-in-out;
+  will-change: transform; //lets the GPU handle transitions for 60fps optimization
+  p {
+    font-size: 14px;
+  }
+
+  .open-late {
+    color: #ff627f;
+  }
+
+  .body {
+    margin: 10px 0;
+    font-size: 14px;
+  }
+
+  .address-box {
+    margin: 8px 0;
+
+    h4 {
+      margin-bottom: 6px;
+    }
+  }
+
+  .hours-box {
+    margin: 8px 0;
+    h4 {
+      margin-bottom: 6px;
+    }
+    p {
+      font-size: 14px;
+      b {
+        font-weight: bold;
+      }
+    }
+  }
+
+  .image-box {
+    display: block;
+
+    img {
+      max-width: 33%;
+      max-height: 100px;
+      padding: 5px 5px;
+    }
+  }
+
+  .close-button{
+    position: absolute;
+    top: 15px;
+    right: 15px;
+  }
+}
+
+
+.big-photo {
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  background: rgba(0, 0, 0, .5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 0;
+  left: 0;
+z-index: 4000;
+}
+
+
