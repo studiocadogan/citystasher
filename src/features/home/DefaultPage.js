@@ -46,7 +46,7 @@ export class DefaultPage extends Component {
 
   render() {
     const { locationData, stashpointData, getStashpointsPending } = this.props.home;
-    return locationData ? (
+    return (
       <div className="home-default-page">
         <Filters setCenter={centerPoint => this.setState({centerPoint})}/>
         <Stashpoint open={this.state.selectedOpen} stashpoint={this.state.selectedStashpoint} close={() => this.setState({ selectedOpen: false })} />
@@ -58,14 +58,14 @@ export class DefaultPage extends Component {
             />
               {getStashpointsPending && <div className="loading"><h1>Loading...</h1></div> }
 
-            <DivIcon position={locationData}>
+              {locationData && <DivIcon position={locationData}>
               <div className="map-icon user" />
-            </DivIcon>
+            </DivIcon>}
             {stashpointData && stashpointData.map(stashpoint => this.renderStashpoint({ stashpoint }))}
           </Map>
         </div>
       </div>
-    ) : <div />;
+    );
   }
 }
 
