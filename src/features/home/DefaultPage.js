@@ -48,19 +48,19 @@ export class DefaultPage extends Component {
     const { locationData, stashpointData, getStashpointsPending } = this.props.home;
     return (
       <div className="home-default-page">
-        <Filters setCenter={centerPoint => this.setState({centerPoint})}/>
+        <Filters setCenter={centerPoint => this.setState({ centerPoint })} />
         <Stashpoint open={this.state.selectedOpen} stashpoint={this.state.selectedStashpoint} close={() => this.setState({ selectedOpen: false })} />
         <div className="map-container">
-          <Map center={this.state.centerPoint || locationData} zoom={16}>
+          <Map center={this.state.centerPoint || locationData || [51.5074, 0.1278]} zoom={16}>
             <TileLayer
               attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
               url="http://{s}.tile.osm.org/{z}/{x}/{y}.png"
             />
-              {getStashpointsPending && <div className="loading"><h1>Loading...</h1></div> }
+            {getStashpointsPending && <div className="loading"><h1>Loading...</h1></div> }
 
-              {locationData && <DivIcon position={locationData}>
+            <DivIcon position={locationData || [51.5074, 0.1278]}>
               <div className="map-icon user" />
-            </DivIcon>}
+            </DivIcon>
             {stashpointData && stashpointData.map(stashpoint => this.renderStashpoint({ stashpoint }))}
           </Map>
         </div>

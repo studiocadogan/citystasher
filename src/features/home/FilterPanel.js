@@ -56,7 +56,7 @@ export class FilterPanel extends Component {
           {stashpointData && stashpointData.map(stashpoint => this.renderPoints(stashpoint))}
         </div>
         <div className="box">
-          <button onClick={() => this.props.setCenter(locationData)}>Your Location</button>
+          <button onClick={() => this.props.setCenter(locationData || [51.5074,  0.1278])}>Your Location</button>
           <h4>Filters</h4>
           <button onClick={() => this.setOpenLate()}>Open Late {currentFilter === 'open_late' && '(Selected)'}</button>
           <h4>Sort By</h4>
