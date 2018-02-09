@@ -32,12 +32,13 @@ export class FilterPanel extends Component {
     getStashpoints(currentFilter === 'open_late' ? null : 'open_late=true');
   }
 
-  sortByCapacity() {
+  sortByDistance() {
     const { sortBy } = this.state;
     const { getStashpoints } = this.props.actions;
+    const { locationData } = this.props.home;
 
-    this.setState({ sortBy: sortBy === 'capacity' ? '' : 'capacity' });
-    getStashpoints(sortBy === 'capacity' ? null : 'sort_order=by_capacity');
+    this.setState({ sortBy: sortBy === 'Distance' ? '' : 'Distance' });
+    getStashpoints(sortBy === 'Distance' ? null : `sort_order=desc&by_distance=true&centre_lat=${locationData[0]}&centre_lon=${locationData[1]}`);
   }
 
   renderPoints(stashpoint) {
@@ -59,7 +60,7 @@ export class FilterPanel extends Component {
           <h4>Filters</h4>
           <button onClick={() => this.setOpenLate()}>Open Late {currentFilter === 'open_late' && '(Selected)'}</button>
           <h4>Sort By</h4>
-          <button onClick={() => this.sortByCapacity()}>Capacity</button>
+          <button onClick={() => this.sortByDistance()}>Distance</button>
         </div>
       </div>
     );
