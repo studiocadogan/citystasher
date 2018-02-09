@@ -14,7 +14,7 @@ export function reducer(state, action) {
     case HOME_SET_LOCATION:
       return {
         ...state,
-        locationData: action.locationData
+        locationData: action.locationData[1] ? action.locationData : [51.5074, 0.1278]
       };
 
     default:
