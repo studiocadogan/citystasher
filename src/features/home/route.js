@@ -11,7 +11,7 @@ export default {
   path: '/',
   name: 'Home',
   childRoutes: [
-    { path: 'default-page',
+    { path: '/',
       name: 'Default page',
       component: DefaultPage,
       isIndex: true,
