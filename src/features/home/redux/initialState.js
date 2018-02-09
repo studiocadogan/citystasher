@@ -8,6 +8,7 @@
 const initialState = {
   count: 0,
   redditReactjsList: [],
+  stashpointData: [51.5074,  0.1278],
   getStashpointsPending: false,
   getStashpointsError: null,
 };
